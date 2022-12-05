@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#==========#
+#   php    #
+#==========#
+export PHP_SESSION_TYPE=${PHP_SESSION_TYPE:-files}
+export PHP_SESSION_PATH=${PHP_SESSION_PATH:-/data/php/session}
+export PHP_ERROR_LOG=${PHP_ERROR_LOG:-/data/php/log/error.log}
+export PHP_MAX_EXECUTION_TIME=${PHP_MAX_EXECUTION_TIME:-120}
+export PHP_MEMORY_LIMIT=${PHP_MEMORY_LIMIT:-256M}
+export PHP_POST_MAX_SIZE=${PHP_POST_MAX_SIZE:-128M}
+export PHP_UPLOAD_MAX_FILESIZE=${PHP_UPLOAD_MAX_FILESIZE:-128M}
+
+#===========#
+#   MySQL   #
+#===========#
+export MYSQL_HOST=${MYSQL_HOST:-127.0.0.1}
+export MYSQL_PORT=${MYSQL_PORT:-3306}
+export MYSQL_DB=${MYSQL_DB:-zendas}
+export MYSQL_USER=${MYSQL_USER:-root}
+export MYSQL_PASSWORD=${MYSQL_PASSWORD:-pass4Zentao}
+
+#==========#
+# Apache   #
+#==========#
+export APP_DOMAIN=${APP_DOMAIN:-*}
+export DOCUMENT_ROOT=${DOCUMENT_ROOT:-/apps/zendas/www}
+
+# ======================#
+# Persistence directory #
+#=======================#
+export PHP_PERSISTENCE_LIST=(
+"/data/php/log"
+"/data/php/session"
+"/data/zendas")
+
+#==========================================#
+# Persistence directory and make soft link #
+#==========================================#
+export PERSISTENCE_LINK_LIST=(
+"/data/zendas/config/my.php"
+"/data/zendas/config/license"
+"/data/zendas/www/data"
+"/data/zendas/tmp/log"
+"/data/zendas/tmp/template"
+"/data/zendas/tmp/backup"
+"/data/zendas/module/extension/ext")
