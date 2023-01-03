@@ -41,8 +41,7 @@ stop: ## 停服务
 restart: build clean ps ## 重构
 
 clean: stop ## 停服务
-	export TAG=$(TAG) ;docker-compose -f docker-compose.yml down
-	docker volume prune -f
+	export TAG=$(TAG) ;docker-compose -f docker-compose.yml down -v
 
 logs: ## 查看运行日志
 	export TAG=$(TAG) ;docker-compose -f docker-compose.yml logs

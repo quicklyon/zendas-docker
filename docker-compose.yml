@@ -15,7 +15,7 @@ services:
       - net
 
   zendas:
-    image: hub.qucheng.com/app/zendas:${TAG:-latest}
+    image: easysoft/zendas:${TAG:-latest}
     container_name: zendas
     ports:
       - '8080:80'
