@@ -21,7 +21,7 @@
 
 ZenDAS是由禅道团队推出的一款致力于企业高效管理的在线专业数据分析工具，助力企业从经验管理到统计管理的转型
 
-![screenshots](https://raw.githubusercontent.com/quicklyon/zendas-docker/master/.template/screenshot.png)
+![screenshots](https://img.qucheng.com/app/z/zendas-screenshot01.png)
 
 ZenDas官网：[https://www.zendas.com](https://www.zendas.com)
 
