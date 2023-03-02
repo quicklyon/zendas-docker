@@ -9,6 +9,8 @@ help: ## this help
 build: ## 构建镜像
 	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="true" -t hub.qucheng.com/app/$(APP_NAME):$(TAG) -f Dockerfile .
 	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG) hub.qucheng.com/app/$(APP_NAME)
+	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):$(TAG)
+	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG) easysoft/$(APP_NAME)
 
 build-public: ## 国外构建镜像
 	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="false" -t easysoft/$(APP_NAME):$(TAG) -f Dockerfile .

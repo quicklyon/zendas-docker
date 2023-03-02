@@ -7,8 +7,6 @@
 # Constants
 CACHE_ROOT="/tmp/easysoft/pkg/cache"
 DOWNLOAD_URL="https://pkg-hk.qucheng.com/files/stacksmith"
-ZENTAO_URL="https://www.zentao.net/dl/zentao"
-ZDOO_URL="https://www.zdoo.com/dl/zdoo"
 ZENDAS_URL="https://dl.cnezsoft.com/zendas"
 
 # Functions
@@ -27,23 +25,10 @@ ZENDAS_URL="https://dl.cnezsoft.com/zendas"
 z_download() {
     local name="${1:?software name is required}"
     local version="${2:?version is required}"
-    local zentao_base_name="ZenTaoPMS.${version}.php7.2_7.4.zip"
-    local zdoo_base_name="zdoo.${version}.php7.2.zip"
-    local zdas_base_name="ZenDAS.${version}.stable.zip"
+    local zdas_base_name="ZenDAS.${version}.stable.linux64.zip"
     local directory="/apps/"
-
     echo "Downloading $name:$version package"
     case $name in
-    "zentao")
-        wget --no-check-certificate --quiet --output-document=/tmp/"${1}" "${ZENTAO_URL}/${version}/${zentao_base_name}"
-        unzip -qq -d ${directory} /tmp/"${1}" && mv /apps/zentaopms /apps/zentao && rm -rf /apps/zentao/www/data
-        rm /tmp/"${1}"
-        ;;
-    "zdoo")
-        wget --no-check-certificate --quiet --output-document=/tmp/"${1}" "${ZDOO_URL}/${version}/${zdoo_base_name}"
-        unzip -qq -d ${directory} /tmp/"${1}" && rm -rf /apps/zdoo/www/data
-        rm /tmp/"${1}"
-        ;;
     "zendas")
         wget --no-check-certificate --quiet --output-document=/tmp/"${1}" "${ZENDAS_URL}/${version}.stable/${zdas_base_name}"
         unzip -qq -d ${directory} /tmp/"${1}" && rm -rf /apps/zdoo/www/data

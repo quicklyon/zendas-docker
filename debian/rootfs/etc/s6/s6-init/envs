@@ -37,11 +37,12 @@ export PHP_PERSISTENCE_LIST=(
 #==========================================#
 # Persistence directory and make soft link #
 #==========================================#
-# export PERSISTENCE_LINK_LIST=(
-# "/data/zendas/config/my.php"
+export PERSISTENCE_LINK_LIST=(
+"/data/zendas/config"
 # "/data/zendas/config/license"
-# "/data/zendas/www/data"
+"/data/zendas/www/data"
 # "/data/zendas/tmp/log"
 # "/data/zendas/tmp/template"
 # "/data/zendas/tmp/backup"
-# "/data/zendas/module/extension/ext")
+# "/data/zendas/module/extension/ext"
+)

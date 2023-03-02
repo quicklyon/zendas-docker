@@ -24,29 +24,25 @@ for pdir in "${PHP_PERSISTENCE_LIST[@]}"
 do
     # Ensure a directory exists and,is owned by the given user
     ensure_dir_exists "$pdir" "www-data"
-    if [ "$pdir" == "/data/zendas/www/data" ];then
+    # if [ "$pdir" == "/data/zendas/www/data" ];then
        # Interim processing
-       chmod 777 "$pdir"
+    #   chmod 777 "$pdir"
+       # ls -alh /apps/zendas/www/data/
        # ln -s "$pdir" /apps/zendas/www/
-    fi
+    #fi
 done
 
-# Make soft link for persistent directory
-# if [ ! -f /data/zendas/.init_cfg ];then
-#     for ldir in "${PERSISTENCE_LINK_LIST[@]}"
-#     do
-#         ensure_dir_exists "$(dirname $ldir)" "www-data"
-#         ensure_dir_exists "${ldir/data/apps}" "www-data" "777"
-#         mv "${ldir/data/apps}" "$(dirname $ldir)"
-#         make_soft_link "$ldir" "${ldir/data/apps}" "www-data"
-#     done
-#     touch /data/zendas/.init_cfg
-# else
-#     for ldir in "${PERSISTENCE_LINK_LIST[@]}"
-#     do
-#         make_soft_link "$ldir" "${ldir/data/apps}" "www-data"
-#     done
-# fi
+if [ ! -f /data/zendas/.init_cfg ];then
+    ensure_dir_exists "/data/zendas" "www-data"
+    mv /apps/zendas/config /data/zendas/ && touch /data/zendas/.init_cfg
+fi
+
+for ldir in $PERSISTENCE_LINK_LIST
+do
+    ensure_dir_exists "$ldir" "www-data"
+    configure_permissions_ownership "$ldir" -d 777
+    make_soft_link "$ldir" "${ldir/data/apps}" "www-data"
+done
 
 # Check and delete install.php and upgrade.php
 # /bin/bash /usr/bin/check_files.sh &
