@@ -24,21 +24,21 @@ for pdir in "${PHP_PERSISTENCE_LIST[@]}"
 do
     # Ensure a directory exists and,is owned by the given user
     ensure_dir_exists "$pdir" "www-data"
-    # if [ "$pdir" == "/data/zendas/www/data" ];then
-       # Interim processing
-    #   chmod 777 "$pdir"
-       # ls -alh /apps/zendas/www/data/
-       # ln -s "$pdir" /apps/zendas/www/
-    #fi
 done
 
 if [ ! -f /data/zendas/.init_cfg ];then
-    ensure_dir_exists "/data/zendas" "www-data"
-    mv /apps/zendas/config /data/zendas/ && touch /data/zendas/.init_cfg
+    info "first init cfg"
+    ensure_dir_exists "/data/zendas/config" "www-data"
+    ls -alh /app/zendas/config/license
+    if [ -d "/app/zendas/config/license" ]; then
+        mv /app/zendas/config/license /data/zendas/config/license && touch /data/zendas/.init_cfg
+    fi
 fi
 
-for ldir in $PERSISTENCE_LINK_LIST
+info "Prepare persistence link."
+for ldir in "${PERSISTENCE_LINK_LIST[@]}"
 do
+    debug "check link $ldir ${ldir/data/apps}"
     ensure_dir_exists "$ldir" "www-data"
     configure_permissions_ownership "$ldir" -d 777
     make_soft_link "$ldir" "${ldir/data/apps}" "www-data"

@@ -32,17 +32,13 @@ export DOCUMENT_ROOT=${DOCUMENT_ROOT:-/apps/zendas/www}
 export PHP_PERSISTENCE_LIST=(
 "/data/php/log"
 "/data/php/session"
-"/data/zendas/www/data")
+)
 
 #==========================================#
 # Persistence directory and make soft link #
 #==========================================#
 export PERSISTENCE_LINK_LIST=(
-"/data/zendas/config"
-# "/data/zendas/config/license"
+"/data/zendas/config/my.php"
+"/data/zendas/config/license"
 "/data/zendas/www/data"
-# "/data/zendas/tmp/log"
-# "/data/zendas/tmp/template"
-# "/data/zendas/tmp/backup"
-# "/data/zendas/module/extension/ext"
 )

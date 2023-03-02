@@ -24,6 +24,7 @@ make_soft_link() {
     local owner=${3:-}
     local group=${4:-}
 
+    debug "source: $source, dest: $dest"
 
     [ -d "$dest" ] && mv "$dest" "$dest".bak
     [ ! -L "$dest" ] && ln -s "$source" "$dest"
