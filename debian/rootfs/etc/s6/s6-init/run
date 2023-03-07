@@ -40,6 +40,8 @@ if [ ! -f /data/zendas/.init_cfg ];then
     if [ -d "/apps/zendas/config/license.bak" ]; then
         cp -a /apps/zendas/config/license.bak/* /data/zendas/config/license/ && touch /data/zendas/.init_cfg
     fi
+elif [ -f /apps/zendas/www/install.php ]; then
+    mv /apps/zendas/www/install.php /apps/zendas/www/install.php.bak
 fi
 
 
