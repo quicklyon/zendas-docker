@@ -19,7 +19,7 @@
 
 {{APP_DESC}}
 
-![screenshots](https://raw.githubusercontent.com/quicklyon/{{app_name}}-docker/{{REPO_BRANCH}}/.template/screenshot.png)
+![screenshots](https://img.qucheng.com/app/z/zendas-screenshot01.png)
 
 {{APP_NAME}}官网：[{{APP_HOME}}]({{APP_HOME}})
 

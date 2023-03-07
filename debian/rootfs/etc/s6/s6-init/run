@@ -26,15 +26,6 @@ do
     ensure_dir_exists "$pdir" "www-data"
 done
 
-if [ ! -f /data/zendas/.init_cfg ];then
-    info "first init cfg"
-    ensure_dir_exists "/data/zendas/config" "www-data"
-    ls -alh /app/zendas/config/license
-    if [ -d "/app/zendas/config/license" ]; then
-        mv /app/zendas/config/license /data/zendas/config/license && touch /data/zendas/.init_cfg
-    fi
-fi
-
 info "Prepare persistence link."
 for ldir in "${PERSISTENCE_LINK_LIST[@]}"
 do
@@ -43,6 +34,14 @@ do
     configure_permissions_ownership "$ldir" -d 777
     make_soft_link "$ldir" "${ldir/data/apps}" "www-data"
 done
+
+if [ ! -f /data/zendas/.init_cfg ];then
+    info "first init cfg"
+    if [ -d "/apps/zendas/config/license.bak" ]; then
+        cp -a /apps/zendas/config/license.bak/* /data/zendas/config/license/ && touch /data/zendas/.init_cfg
+    fi
+fi
+
 
 # Check and delete install.php and upgrade.php
 # /bin/bash /usr/bin/check_files.sh &
