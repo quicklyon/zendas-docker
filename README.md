@@ -52,6 +52,7 @@ ZenDas官网：[https://www.zendas.com](https://www.zendas.com)
 
 镜像地址: [easysoft/quickon-zendas](https://hub.docker.com/repository/docker/easysoft/quickon-zendas)
 
+[`1.6-20230620`](https://www.zendas.com/dynamic/79933.html)
 [`1.5-20230517`](https://www.zendas.com/dynamic/zendas1.5-79932.html)
 [`1.4-20230307`](https://www.zendas.com/dynamic/zendas1.4-79931.html)
 [`1.3-20230103`](https://www.zendas.com/dynamic/zendas1.3-79929.html)
@@ -71,6 +72,8 @@ docker pull easysoft/zendas:latest
 ```bash
 docker pull easysoft/zendas:[TAG]
 ```
+
+> 自1.6版本开始, 新增提供腾讯云镜像 `ccr.ccs.tencentyun.com/easysoft/zendas:[TAG]`
 
 ## 四、持久化数据
 
