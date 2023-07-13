@@ -52,6 +52,7 @@ ZenDas官网：[https://www.zendas.com](https://www.zendas.com)
 
 镜像地址: [easysoft/quickon-zendas](https://hub.docker.com/repository/docker/easysoft/quickon-zendas)
 
+[`1.7-20230713`](https://www.zendas.com/dynamic/zendas1.7-79934.html)
 [`1.6-20230620`](https://www.zendas.com/dynamic/79933.html)
 [`1.5-20230517`](https://www.zendas.com/dynamic/zendas1.5-79932.html)
 [`1.4-20230307`](https://www.zendas.com/dynamic/zendas1.4-79931.html)
