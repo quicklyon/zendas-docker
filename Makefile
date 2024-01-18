@@ -15,6 +15,7 @@ build: ## 构建镜像
 build-public: ## 国外构建镜像
 	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="false" -t easysoft/$(APP_NAME):$(TAG) -f Dockerfile .
 	docker tag easysoft/$(APP_NAME):$(TAG) easysoft/$(APP_NAME)
+	docker tag easysoft/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):$(VERSION)
 
 push: ## push 镜像到 hub.qucheng.com
 	docker push hub.qucheng.com/app/$(APP_NAME):$(TAG)
@@ -22,6 +23,7 @@ push: ## push 镜像到 hub.qucheng.com
 push-public: ## push 镜像到 hub.docker.com
 	docker push easysoft/$(APP_NAME):$(TAG)
 	docker push easysoft/$(APP_NAME):latest
+	docker push easysoft/$(APP_NAME):$(VERSION)
 
 push-sync-tcr: push-public ## 同步到腾讯镜像仓库
 	curl http://i.haogs.cn:3839/sync?image=easysoft/$(APP_NAME):$(TAG)
