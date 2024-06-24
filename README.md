@@ -52,7 +52,9 @@ ZenDas官网：[https://www.zendas.com](https://www.zendas.com)
 
 镜像地址: [easysoft/zendas](https://hub.docker.com/repository/docker/easysoft/zendas)
 
-- [`latest`,`1.7`,`1.7-20240118`](https://www.zendas.com/dynamic/zendas1.7-79934.html)
+- [`latest`,`2.0.1`,`2.0.1-20240624`](https://www.zendas.com/dynamic/zendas2.0.1-79936.html)
+- [`2.0`,`2.0-20240419`](https://www.zendas.com/dynamic/zendas2.0-79934.html)
+- [`1.7`,`1.7-20240118`](https://www.zendas.com/dynamic/zendas1.7-79934.html)
 - [`1.6-20230620`](https://www.zendas.com/dynamic/79933.html)
 - [`1.5-20230517`](https://www.zendas.com/dynamic/zendas1.5-79932.html)
 - [`1.4-20230307`](https://www.zendas.com/dynamic/zendas1.4-79931.html)
